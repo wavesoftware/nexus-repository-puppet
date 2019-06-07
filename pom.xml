@@ -24,7 +24,7 @@
 
   <artifactId>nexus-repository-puppet</artifactId>
   <name>${project.groupId}:${project.artifactId}</name>
-  <version>0.0.3.camaral</version>
+  <version>0.1.0.alpha-1</version>
   <inceptionYear>2018</inceptionYear>
   <packaging>bundle</packaging>
 
@@ -68,10 +68,11 @@
   </dependencies>
 
   <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
+    <repository>
+	  <id>bintray-wavesoftware-mvn-github-forks</id>
+	  <name>wavesoftware-mvn-github-forks</name>
+	  <url>https://api.bintray.com/maven/wavesoftware/mvn-github-forks/nexus-repository-puppet;publish=1</url>
+    </repository>
   </distributionManagement>
 
   <build>
@@ -108,19 +109,6 @@
       <id>release</id>
       <build>
         <plugins>
-
-          <plugin>
-            <groupId>org.sonatype.plugins</groupId>
-            <artifactId>nexus-staging-maven-plugin</artifactId>
-            <version>1.6.7</version>
-            <extensions>true</extensions>
-            <configuration>
-              <serverId>rso</serverId>
-              <nexusUrl>https://repository.sonatype.org/</nexusUrl>
-              <autoReleaseAfterClose>false</autoReleaseAfterClose>
-            </configuration>
-          </plugin>
-
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
