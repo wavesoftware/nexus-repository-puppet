@@ -3,6 +3,10 @@ ARG NEXUS_VERSION=3.16.2
 FROM maven:3-jdk-8-alpine AS build
 ARG NEXUS_VERSION=3.16.2
 ARG NEXUS_BUILD=01
+RUN apk add git
+RUN git clone https://github.com/sonatype/nexus-public.git --branch release-${NEXUS_VERSION}-${NEXUS_BUILD}
+WORKDIR /nexus-public
+RUN mvn -V clean verify -DskipTests -T1C
 
 COPY . /nexus-repository-puppet/
 WORKDIR /nexus-repository-puppet/
