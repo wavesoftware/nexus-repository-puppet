@@ -35,7 +35,10 @@ public final class ApplicationDirectoriesStub
         }
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
             try {
-                Files.deleteIfExists(tempDir);
+                Files.walk(tempDir)
+                        .filter(Files::isRegularFile)
+                        .map(Path::toFile)
+                        .forEach(File::delete);
             } catch (IOException ex) {
                 throw new IllegalStateException(ex);
             }

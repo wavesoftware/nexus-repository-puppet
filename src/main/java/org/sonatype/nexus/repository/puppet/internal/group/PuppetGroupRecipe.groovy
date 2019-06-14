@@ -25,7 +25,7 @@ import javax.inject.Singleton
  */
 @Named(PuppetGroupRecipe.NAME)
 @Singleton
-class PuppetGroupRecipe extends PuppetRecipeSupport {
+final class PuppetGroupRecipe extends PuppetRecipeSupport {
     public static final String NAME = 'puppet-group'
 
     @Inject

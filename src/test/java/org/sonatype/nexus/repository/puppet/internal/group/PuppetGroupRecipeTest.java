@@ -1,4 +1,4 @@
-package org.sonatype.nexus.repository.puppet.internal.group.it;
+package org.sonatype.nexus.repository.puppet.internal.group;
 
 import org.eclipse.sisu.launch.InjectedTest;
 import org.junit.Test;
@@ -6,7 +6,6 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 import org.sonatype.nexus.repository.Repository;
-import org.sonatype.nexus.repository.puppet.internal.group.PuppetGroupRecipe;
 
 import static org.fest.assertions.api.Assertions.assertThat;
 
@@ -15,7 +14,7 @@ import static org.fest.assertions.api.Assertions.assertThat;
  * @since 0.1.0
  */
 @RunWith(MockitoJUnitRunner.class)
-public class PuppetGroupRecipeIT extends InjectedTest {
+public class PuppetGroupRecipeTest extends InjectedTest {
 
     @Mock
     private Repository repository;

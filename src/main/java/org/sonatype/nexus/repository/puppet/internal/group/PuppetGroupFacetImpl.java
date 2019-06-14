@@ -16,7 +16,7 @@ import javax.inject.Named;
  */
 @Named
 @Facet.Exposed
-final class PuppetGroupFacetImpl
+public class PuppetGroupFacetImpl
         extends GroupFacetImpl
         implements PuppetGroupFacet {
 
