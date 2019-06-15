@@ -12,11 +12,11 @@
  */
 package org.sonatype.nexus.repository.puppet.internal.ui;
 
+import org.sonatype.nexus.rapture.UiPluginDescriptorSupport;
+
 import javax.annotation.Priority;
 import javax.inject.Named;
 import javax.inject.Singleton;
-
-import org.sonatype.nexus.rapture.UiPluginDescriptorSupport;
 
 @Named
 @Singleton
@@ -26,6 +26,7 @@ public class UiPluginDescriptorImpl
 {
   public UiPluginDescriptorImpl() {
     super("nexus-repository-puppet");
+    setHasStyle(false);
     setNamespace("NX.puppet");
     setConfigClassName("NX.puppet.app.PluginConfig");
   }

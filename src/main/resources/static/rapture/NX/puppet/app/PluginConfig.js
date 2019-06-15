@@ -13,8 +13,10 @@
 Ext.define('NX.puppet.app.PluginConfig', {
   '@aggregate_priority': 100,
 
-  requires: [
-    'NX.puppet.app.PluginStrings',
-    'NX.puppet.util.PuppetRepositoryUrls'
+  controllers: [
+    {
+      id: 'NX.puppet.controller.PuppetDependencySnippetController',
+      active: true
+    }
   ]
 });
